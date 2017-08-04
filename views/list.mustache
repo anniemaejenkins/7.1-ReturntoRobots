@@ -8,10 +8,11 @@
     <h1>Index</h1>
 
 <!-- reusing some code from old robots project -->
+<!-- and also using code from collection manager project -->
       {{#users}}
         <div class="allRobots">
         <img src="{{avatar}}" alt="">
-        <a href="#"></a>
+        <a href="/detail/{{_id}}">{{name}}</a>
         <p><span>{{job}}{{^job}}{{/job}} {{company}}{{^company}}<span class="available">Available for hire</span>{{/company}}</span></p>
       </div>
 
