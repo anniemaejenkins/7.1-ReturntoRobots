@@ -13,7 +13,7 @@ MongoClient.connect("mongodb://localhost:27017/newdb", (error, db) => {
 // users is the array of objects inside of the data file
 // forEach executes the function for each array element(users)
 // .push adds one or more elements(users) to the end of an array and returns new length
-data.users.forEach(function(users){
+data.users.forEach((users) =>{
   robotList.push(users);
 });
 // db.collection.insertMany() inserts multiple documents into a collection

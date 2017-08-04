@@ -10,7 +10,7 @@ app.engine('mustache', mustacheExpress());
 app.set('views', './views');
 app.set('view engine', 'mustache');
 
-app.get('/list', function (req, res) {
+app.get('/list',(req, res) => {
   res.render('list', data);
 });
 
@@ -18,21 +18,29 @@ app.get('/list', function (req, res) {
 
 
 
+// connect to server
+MongoClient.connect('mongodb://localhost:27017/newdb', (error, db) => {
+  const col = db.collection('robots');
+  // assert.equal(null, error);
+  console.log("connected successfully to server");
 
-// MongoClient.connect('mongodb://localhost:27017/newdb', (error, db) => {
-//   const robots = db.collection('users');
-//   assert.equal(null, error);
-//   console.log("connected successfully to server");
-//
-//   robots.find({}).toArray((error, results) => {
-//
-//   });
-//
-//   robots.findOne({}, (error, results) => {
+// finds all robots
+//   col.find({}).toArray((error, results) => {
 //     console.log(results);
 //   });
 //
-// });
+// // finds one robot
+//   col.findOne({}, (error, results) => {
+//     console.log(results);
+//   });
+
+app.get('/', (req, res) => {
+  col.find({}).toArray((error, results) => {
+    res.render('robotList', results);
+  });
+});
+
+});
 
 
 
