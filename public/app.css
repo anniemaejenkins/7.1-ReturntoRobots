@@ -1,3 +1,6 @@
-.allRobots{
+#allRobots{
+  display: flex;
+}
+.specialRobot{
   display: flex;
 }

@@ -3,20 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="../public/list.css">
   </head>
   <body>
     <h1>Index</h1>
 
-<!-- reusing some code from old robots project -->
 <!-- and also using code from collection manager project -->
-      {{#users}}
-        <div class="allRobots">
+<div id="allRobots">
+
+    {{#models}}
+      <div class="indivRobo">
         <img src="{{avatar}}" alt="">
-        <a href="/detail/{{_id}}">{{name}}</a>
+        <a href="/detail/{{id}}">{{name}}</a>
         <p><span>{{job}}{{^job}}{{/job}} {{company}}{{^company}}<span class="available">Available for hire</span>{{/company}}</span></p>
+
       </div>
 
-      {{/users}}
+      {{/models}}
+    </div>
 
   </body>
 </html>

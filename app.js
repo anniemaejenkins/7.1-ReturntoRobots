@@ -19,24 +19,25 @@ MongoClient.connect('mongodb://localhost:27017/newdb', (error, db) => {
   console.log("connected successfully to server");
 
 
-app.get('/list',(req, res) => {
-  res.render('list', data);
+app.get('/',(req, res) => {
+  const col = db.collection('robots');
+  col.find().toArray((error, results)=> {
+    // console.log("list",results);
+    res.render('list', {models: results});
+  });
 });
 
 app.get('/detail/:id', (req, res) => {
   const col = db.collection('robots');
 
   let id = req.params.id;
-
-  col.findOne({_id: id}).then(robot => {
-    res.render('/detail', {robot})
+  id = parseInt(id);
+  col.findOne({id: id}).then(robot => {
+    // console.log(robot);
+    res.render('detail', robot)
   });
 
 });
-
-
-
-
 
 // finds all robots
 //   col.find({}).toArray((error, results) => {

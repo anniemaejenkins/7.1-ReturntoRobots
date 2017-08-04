@@ -1,1 +1,30 @@
 <!-- robot detail page -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./public/app.css">
+  </head>
+  <body>
+    <div class="specialRobot">
+
+      <img src="{{avatar}}" alt="">
+
+      <div class="">
+        <h1>{{name}}</h1>
+        <p>{{address.city}}, {{address.country}} | <p>{{job}}{{^job}}{{/job}} {{company}}{{^company}}<span class="available">Available for hire</span>{{/company}}</p></p>
+        <div class="education">
+          <p>Education {{university}}</p>
+        </div>
+        <div class="skills">
+          <p>Skills {{skills}}</p>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </body>
+</html>
