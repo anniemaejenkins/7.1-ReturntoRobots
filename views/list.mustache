@@ -7,9 +7,14 @@
   <body>
     <h1>Index</h1>
 
+<!-- reusing some code from old robots project -->
       {{#users}}
-        <p>{{name}}</p>
-        <p>{{job}}</p>
+        <div class="allRobots">
+        <img src="{{avatar}}" alt="">
+        <a href="#"></a>
+        <p><span>{{job}}{{^job}}{{/job}} {{company}}{{^company}}<span class="available">Available for hire</span>{{/company}}</span></p>
+      </div>
+
       {{/users}}
 
   </body>

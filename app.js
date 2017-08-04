@@ -36,7 +36,7 @@ MongoClient.connect('mongodb://localhost:27017/newdb', (error, db) => {
 
 app.get('/', (req, res) => {
   col.find({}).toArray((error, results) => {
-    res.render('robotList', results);
+    res.render('list', results);
   });
 });
 
